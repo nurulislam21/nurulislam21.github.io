@@ -1,16 +1,15 @@
-.preloader {
+/* .preloader {
   position: fixed;
   inset: 0;
-  background-color: #030509; /* Deep space background */
+  background-color: #030509;
   display: flex;
-  justify-content: center; /* Centers the terminal box */
+  justify-content: center;
   align-items: center;
   z-index: 999999;
   overflow: hidden;
   padding: 40px;
 }
 
-/* CRT Vignette & Scanlines */
 .scanlines {
   position: absolute;
   inset: 0;
@@ -46,7 +45,6 @@
   position: relative;
 }
 
-/* Hardware brackets for terminal */
 .term-bracket {
   position: absolute;
   width: 30px; height: 30px;
@@ -67,7 +65,7 @@
 
 .timestamp { color: #64748b; margin-right: 15px; }
 .log-text { color: var(--accent-primary); }
-.log-sys { color: #27c93f; text-shadow: 0 0 10px rgba(39, 201, 63, 0.5); font-weight: bold;} /* Green for [OK] */
+.log-sys { color: #27c93f; text-shadow: 0 0 10px rgba(39, 201, 63, 0.5); font-weight: bold;}
 
 .memory-scan .log-text {
   opacity: 0.8;
@@ -103,4 +101,4 @@
   .terminal-line { font-size: 12px; }
   .timestamp { display: none; }
   .terminal-progress { font-size: 13px; }
-}
+} */

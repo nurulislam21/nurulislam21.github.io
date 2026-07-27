@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import Preloader from "./component/Preloader"; 
 import Header from "./component/Head/Header";
 import Home from "./component/Hero/Home"; 
 import Features from "./component/Features/Features";
@@ -19,45 +18,35 @@ import "./index.css";
 import "./App.css";
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
-    if (!isLoading) {
-      AOS.init({
-        duration: 1000,          // Slightly longer for elegance
-        easing: "ease-out-cubic", // Smooth deceleration
-        once: true,              // Only animate once to avoid distraction
-        offset: 80,              // Trigger slightly earlier
-        delay: 50,               // Micro-delay for staggered feel
-      });
-      AOS.refresh(); 
-    }
-  }, [isLoading]);
+    AOS.init({
+      duration: 1000,          // Slightly longer for elegance
+      easing: "ease-out-cubic", // Smooth deceleration
+      once: true,              // Only animate once to avoid distraction
+      offset: 80,              // Trigger slightly earlier
+      delay: 50,               // Micro-delay for staggered feel
+    });
+    AOS.refresh(); 
+  }, []);
 
   return (
-    <>
-      {isLoading ? (
-        <Preloader onComplete={() => setIsLoading(false)} />
-      ) : (
-        <div className="app-wrapper">
-          <CustomCursor />
-          <Header />
-          
-          <main className="main-content">
-            <Home />
-            <Features />
-            <Portfolio />
-            <Resume />
-            <Skill />
-            <Blog />
-            {/* <Testimonial/> */}
-            <Contact />
-          </main>
+    <div className="app-wrapper">
+      <CustomCursor />
+      <Header />
+      
+      <main className="main-content">
+        <Home />
+        <Features />
+        <Portfolio />
+        <Resume />
+        <Skill />
+        <Blog />
+        {/* <Testimonial/> */}
+        <Contact />
+      </main>
 
-          <Footer />
-        </div>
-      )}
-    </>
+      <Footer />
+    </div>
   );
 };
 
