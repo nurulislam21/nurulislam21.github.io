@@ -2,7 +2,7 @@
 .Blog .content.grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
   padding-top: 10px;
 }
 
@@ -19,7 +19,7 @@
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px; 
-  padding: 16px;
+  padding: 18px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -35,10 +35,10 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Certificate Image */
+/* Certificate Image Container */
 .achievement-card .img {
   width: 100%;
-  height: 190px;
+  height: 200px;
   border-radius: 8px; 
   overflow: hidden;
   margin-bottom: 14px;
@@ -70,12 +70,11 @@
 }
 
 .gold-overlay span {
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 600;
-  color: #ffffff;
   background: var(--accent-gold);
   color: #0f172a;
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 6px;
   transform: translateY(8px);
   transition: 0.25s ease;
@@ -116,19 +115,22 @@
 /* Modal Styling */
 .achievement-modal {
   width: 90%;
-  max-width: 800px;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
   padding: 32px;
   background: #0f172a; 
-  border: 1px solid rgba(245, 158, 11, 0.3); 
-  border-radius: 12px;
+  border: 1px solid rgba(245, 158, 11, 0.35); 
+  border-radius: 16px;
   position: relative; 
   z-index: 10000;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 .gold-close {
   position: absolute;
-  top: 16px; right: 16px;
-  width: 32px; height: 32px;
+  top: 18px; right: 18px;
+  width: 34px; height: 34px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #ffffff;
@@ -136,6 +138,7 @@
   cursor: pointer;
   border-radius: 50%;
   display: flex; justify-content: center; align-items: center;
+  transition: all 0.2s ease;
 }
 
 .gold-close:hover {
@@ -148,23 +151,33 @@
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 20px;
+  line-height: 1.35;
 }
 
 .modal-img-full {
   width: 100%;
-  border-radius: 8px;
+  max-height: 550px;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
 }
 
 .modal-img-full img {
   width: 100%;
-  height: auto;
+  max-height: 520px;
+  object-fit: contain;
   display: block;
+  border-radius: 8px;
 }
 
 @media (max-width: 1024px) {
   .Blog .content.grid { grid-template-columns: repeat(2, 1fr); }
+  .modal-img-full img { max-height: 400px; }
 }
 
 @media (max-width: 768px) {
