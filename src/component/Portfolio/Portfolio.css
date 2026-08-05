@@ -2,21 +2,21 @@
 .Portfolio .content.grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
-  gap: 30px; 
-  padding-top: 20px;
+  gap: 24px; 
+  padding-top: 10px;
 }
 
-/* --- The Pro Hardware Card --- */
+/* --- Clean Portfolio Card --- */
 .portfolio-card {
-  background: rgba(13, 18, 28, 0.4); 
+  background: rgba(15, 23, 42, 0.5); 
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 8px; 
-  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px; 
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -24,132 +24,119 @@
 }
 
 .portfolio-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   border-color: rgba(0, 229, 255, 0.3); 
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 229, 255, 0.05);
-  background: rgba(13, 18, 28, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  background: rgba(15, 23, 42, 0.85);
 }
 
-/* --- Image & HUD Overlay --- */
+/* --- Image & Hover Overlay --- */
 .portfolio-card .img {
   width: 100%;
-  height: 220px;
-  border-radius: 4px; 
+  height: 210px;
+  border-radius: 10px; 
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .portfolio-card .img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease, filter 0.4s ease;
-  filter: grayscale(30%) contrast(1.1) brightness(0.9); 
+  transition: transform 0.5s ease;
 }
 
 .portfolio-card:hover .img img {
-  transform: scale(1.05);
-  filter: grayscale(0%) contrast(1.1) brightness(1);
+  transform: scale(1.04);
 }
 
 .img-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 229, 255, 0.3), rgba(0, 0, 0, 0.2));
+  background: rgba(11, 15, 23, 0.6);
+  backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
 
 .img-overlay span {
-  font-family: var(--font-mono);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  transform: translateY(20px);
-  transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  background: rgba(0, 0, 0, 0.6);
-  padding: 8px 16px;
-  border: 1px solid var(--accent-primary);
-  border-radius: 4px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  background: var(--accent-primary, #00e5ff);
+  color: #0f172a;
+  border-radius: 8px;
+  transform: translateY(10px);
+  transition: 0.3s ease;
 }
 
 .portfolio-card:hover .img-overlay { opacity: 1; }
-.portfolio-card:hover .img-overlay span { transform: translateY(0); box-shadow: 0 0 15px var(--accent-glow); }
+.portfolio-card:hover .img-overlay span { transform: translateY(0); }
 
 /* --- Specs & Typography --- */
 .portfolio-card .category {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .cat-badge {
-  color: var(--accent-primary);
-  background: rgba(0, 229, 255, 0.05);
-  font-family: var(--font-mono);
-  font-size: 10px;
+  color: var(--accent-primary, #00e5ff);
+  background: rgba(0, 229, 255, 0.08);
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
   border: 1px solid rgba(0, 229, 255, 0.2);
 }
 
 .portfolio-card .likes {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-muted);
-  letter-spacing: 1px;
+  font-size: 12px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .portfolio-card h2 {
-  font-family: var(--font-sans);
+  font-family: var(--font-sans, 'Inter', sans-serif);
   font-size: 18px;
   font-weight: 700;
-  color: var(--text-main);
-  line-height: 1.3;
-  margin-bottom: 15px;
-  transition: color 0.3s ease;
-  letter-spacing: -0.5px;
+  color: #ffffff;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  transition: color 0.25s ease;
 }
 
-.portfolio-card:hover h2 { color: var(--accent-primary); }
+.portfolio-card:hover h2 { color: var(--accent-primary, #00e5ff); }
 
-/* Tech Stack Tags on Card */
+/* Tech Stack Tags */
 .card-tech-stack {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: auto; /* Pushes tags to the bottom */
+  margin-top: auto;
 }
 
 .stack-tag {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.03);
-  padding: 4px 8px;
-  border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 10px;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 3px 8px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.portfolio-card:hover .stack-tag {
-  border-color: rgba(0, 229, 255, 0.2);
-  color: #cbd5e1;
-}
-
-/* --- Modal/Popup HUD Styling --- */
+/* --- Modal Popup Styling --- */
 .modal-wrapper {
   position: fixed; inset: 0;
   z-index: 9999;
@@ -158,7 +145,7 @@
 
 .overlay {
   position: absolute; inset: 0;
-  background: rgba(3, 5, 9, 0.9); 
+  background: rgba(11, 15, 23, 0.8); 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -166,179 +153,148 @@
 .modal-content {
   position: relative;
   z-index: 10000;
-  width: 85%;
-  max-width: 900px;
-  max-height: 90vh;
+  width: 90%;
+  max-width: 850px;
+  max-height: 85vh;
   overflow-y: auto;
-  padding: 40px;
-  background: rgba(8, 12, 20, 0.95);
-  border: 1px solid var(--accent-primary);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 229, 255, 0.05);
-  border-radius: 8px;
-}
-
-/* Modal Engineering Blueprint Grid */
-.modal-content::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(rgba(0, 229, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 229, 255, 0.02) 1px, transparent 1px);
-  background-size: 30px 30px;
-  z-index: 1;
-  pointer-events: none;
+  padding: 36px;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
 }
 
 .close-modal {
   position: absolute;
-  top: 20px; right: 20px;
-  width: 35px; height: 35px;
-  background: rgba(0, 229, 255, 0.05);
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  color: var(--accent-primary);
-  font-size: 16px;
+  top: 16px; right: 16px;
+  width: 32px; height: 32px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   z-index: 10;
-  border-radius: 4px;
+  border-radius: 50%;
   display: flex; justify-content: center; align-items: center;
 }
 
 .close-modal:hover {
-  background: #ff5f56;
-  border-color: #ff5f56;
-  color: #fff;
-  box-shadow: 0 0 15px rgba(255, 95, 86, 0.4);
+  background: #ef4444;
+  border-color: #ef4444;
 }
 
-.modal-body { display: flex; gap: 40px; align-items: center; position: relative; z-index: 5; }
+.modal-body { display: flex; gap: 32px; align-items: center; position: relative; z-index: 5; }
 
 .modal-img { 
   width: 45%; 
-  position: relative; 
-  padding: 8px; 
-  border: 1px solid rgba(0, 229, 255, 0.15); 
-  border-radius: 6px;
-  background: rgba(0,0,0,0.4);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.modal-img img { width: 100%; height: auto; display: block; border-radius: 4px; filter: contrast(1.05);}
+.modal-img img { width: 100%; height: auto; display: block; border-radius: 12px; }
 
 .modal-text { width: 55%; display: flex; flex-direction: column; }
-.system-badge { margin-bottom: 15px; display: inline-block; align-self: flex-start; }
 
 .modal-text h1 { 
-  font-family: var(--font-sans);
-  font-size: 28px; 
-  color: var(--text-main); 
-  margin: 10px 0 20px 0; 
-  letter-spacing: -1px; 
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 24px; 
+  color: #ffffff; 
+  margin: 10px 0 16px 0; 
   font-weight: 800;
 }
 
 .modal-text p { 
-  font-size: 15px; 
-  color: var(--text-muted); 
-  margin-bottom: 25px; 
-  line-height: 1.8; 
+  font-size: 14.5px; 
+  color: #94a3b8; 
+  margin-bottom: 20px; 
+  line-height: 1.7; 
 }
 
 .modal-tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 30px;
-  padding: 15px;
-  background: rgba(255, 255, 255, 0.02);
-  border-left: 2px solid var(--accent-primary);
-  border-radius: 0 4px 4px 0;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
-.modal-tech-list span {
-  font-family: var(--font-mono);
+.modal-tech-tag {
   font-size: 11px;
-  color: var(--accent-primary);
   font-weight: 600;
-  letter-spacing: 1px;
+  color: var(--accent-primary, #00e5ff);
+  background: rgba(0, 229, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 229, 255, 0.2);
 }
 
-.modal-actions { display: flex; gap: 15px; }
+.modal-actions { display: flex; gap: 12px; }
 
-/* --- Pro Buttons --- */
+/* Modal Buttons */
 .pro-btn {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  padding: 12px 24px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: 1.5px;
+  transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  border-radius: 4px;
+  gap: 8px;
+  border-radius: 8px;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .active-btn {
-  background: var(--accent-primary);
-  color: var(--bg-main);
-  border: 1px solid var(--accent-primary);
-  font-weight: 700;
+  background: #1e293b;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .active-btn:hover {
-  box-shadow: 0 0 20px var(--accent-glow);
-  transform: translateY(-2px);
+  background: #334155;
 }
 
 .outline-btn {
-  background: rgba(0, 229, 255, 0.05);
-  color: var(--accent-primary);
-  border: 1px solid var(--accent-primary);
-  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-primary, #00e5ff), #3b82f6);
+  color: #ffffff;
+  border: none;
 }
 
 .outline-btn:hover {
-  background: rgba(0, 229, 255, 0.1);
   transform: translateY(-2px);
-  box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
 }
 
 .load-more-btn {
-  background: rgba(13, 18, 28, 0.6);
-  backdrop-filter: blur(10px);
-  color: var(--accent-primary);
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  margin-top: 20px;
-  padding: 14px 35px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  border-radius: 4px;
+  background: rgba(30, 41, 59, 0.6);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 24px;
+  padding: 12px 30px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .load-more-btn:hover {
-  border-color: var(--accent-primary);
-  background: rgba(0, 229, 255, 0.05);
-  box-shadow: 0 0 20px var(--accent-glow);
-  color: #fff;
+  border-color: var(--accent-primary, #00e5ff);
+  background: rgba(30, 41, 59, 0.9);
 }
 
-/* --- Responsive Layout Fixes --- */
+/* --- Responsive --- */
 @media (max-width: 1024px) {
   .Portfolio .content.grid { grid-template-columns: repeat(2, 1fr); }
   .modal-body { flex-direction: column; }
   .modal-img, .modal-text { width: 100%; }
 }
 @media (max-width: 768px) {
-  .Portfolio .content.grid { grid-template-columns: 1fr; } 
-  .portfolio-card .img { height: 250px; }
-  .modal-content { width: 95%; padding: 25px; max-height: 85vh; }
+  .Portfolio .content.grid { grid-template-columns: 1fr; gap: 16px; } 
+  .portfolio-card .img { height: 220px; }
+  .modal-content { width: 95%; padding: 24px; }
   .modal-actions { flex-direction: column; }
   .pro-btn { width: 100%; justify-content: center; }
 }

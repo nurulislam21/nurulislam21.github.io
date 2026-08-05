@@ -5,7 +5,6 @@ import "./Footer.css";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // Function to smoothly scroll back to the top of the page
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -19,51 +18,47 @@ const Footer = () => {
         
         <div className="footer-main-grid">
           
-          {/* Column 1: Brand Identity & Telemetry */}
+          {/* Column 1: Personal Brand & Intro */}
           <div className="footer-brand" data-aos="fade-right">
             <div className="footer-logo-wrapper">
               <div className="footer-logo">
-                <img src={logo1} alt="Nurul Islam Noman - Robotics Engineer" />
-                <div className="ring-1"></div>
-                <div className="ring-2"></div>
+                <img src={logo1} alt="Nurul Islam Noman - Embedded & Robotics Engineer" />
               </div>
               <div className="brand-text">
-                <h2>NOMAN<span className="cursor-blink">_</span></h2>
-                <p>Systems & Robotics Engineer</p>
+                <h2>Nurul Islam Noman<span className="logo-dot">.</span></h2>
+                <p>Embedded Systems & Robotics Engineer</p>
               </div>
             </div>
             
-            <div className="footer-telemetry mtop">
-              <span>SYS_UPTIME: 99.9%</span>
-              <span>DATALINK: SECURE [RSA-2048]</span>
-              <span>BASE: DHAKA, BANGLADESH</span>
-            </div>
+            <p className="footer-bio-text">
+              Building autonomous VTOLs, custom hardware, and firmware. Always open to novel engineering challenges and collaboration.
+            </p>
           </div>
 
-          {/* Column 2: System Directory (Quick Links) */}
+          {/* Column 2: Quick Links */}
           <div className="footer-links" data-aos="fade-up" data-aos-delay="100">
-            <h3 className="footer-heading">DIRECTORY //</h3>
+            <h3 className="footer-heading">Navigation</h3>
             <ul>
-              <li><a href="#Home"><i className="fas fa-chevron-right"></i> 00. Home</a></li>
-              <li><a href="#Expertise"><i className="fas fa-chevron-right"></i> 01. Expertise</a></li>
-              <li><a href="#Projects"><i className="fas fa-chevron-right"></i> 02. Projects</a></li>
-              <li><a href="#Resume"><i className="fas fa-chevron-right"></i> 03. History</a></li>
-              <li><a href="#Milestones"><i className="fas fa-chevron-right"></i> 04. Milestones</a></li>
-              <li><a href="#Contact"><i className="fas fa-chevron-right"></i> 05. Contact</a></li>
+              <li><a href="#Home">Home</a></li>
+              <li><a href="#Expertise">What I Do</a></li>
+              <li><a href="#Projects">Projects</a></li>
+              {/* <li><a href="#Resume">Resume</a></li>
+              <li><a href="#Milestones">Milestones</a></li> */}
+              <li><a href="#Contact">Get in Touch</a></li>
             </ul>
           </div>
 
-          {/* Column 3: Contact Telemetry */}
+          {/* Column 3: Direct Contact */}
           <div className="footer-contact" data-aos="fade-up" data-aos-delay="200">
-            <h3 className="footer-heading">COMMS //</h3>
-            <p><i className="fas fa-terminal"></i> noman1272003@gmail.com</p>
-            <p><i className="fas fa-satellite-dish"></i> +880 1823-395901</p>
+            <h3 className="footer-heading">Contact</h3>
+            <p><i className="far fa-envelope"></i> noman1272003@gmail.com</p>
+            <p><i className="fas fa-phone-alt"></i> +880 1823-395901</p>
             <p><i className="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
           </div>
 
-          {/* Column 4: Uplink & Controls */}
+          {/* Column 4: Social Links & Back to Top */}
           <div className="footer-social" data-aos="fade-left" data-aos-delay="300">
-            <h3 className="footer-heading">UPLINK //</h3>
+            <h3 className="footer-heading">Socials</h3>
             <div className="social-flex">
               <a href="https://www.linkedin.com/in/nurulislam21/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
                 <i className="fab fa-linkedin-in"></i>
@@ -76,24 +71,22 @@ const Footer = () => {
               </a>
             </div>
             
-            {/* Functional Back to Top Button */}
-            <button className="back-to-top" onClick={scrollToTop} aria-label="Scroll to top">
-              <i className="fas fa-arrow-up"></i> RETURN_TOP
+            <button className="back-to-top" onClick={scrollToTop} aria-label="Back to top">
+              <i className="fas fa-arrow-up"></i> Back to Top
             </button>
           </div>
           
         </div>
 
-        {/* Fading Tech Divider */}
         <div className="footer-divider"></div>
 
-        {/* Bottom Bar: Copyright & Status */}
+        {/* Bottom Bar */}
         <div className="footer-bottom d_flex">
           <p className="footer-text">
-            <span className="sys-offline">SYSTEM.SLEEP //</span> © {currentYear}. Engineered by <span className="primary_color">Nurul Islam Noman</span>. 
+            © {currentYear} Nurul Islam Noman. All rights reserved.
           </p>
           <p className="footer-text terminal-status">
-            STATUS: <span className="status-online">ONLINE</span>
+            <span className="status-dot"></span> Available for projects
           </p>
         </div>
 

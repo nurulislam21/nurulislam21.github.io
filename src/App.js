@@ -6,14 +6,14 @@ import Header from "./component/Head/Header";
 import Home from "./component/Hero/Home"; 
 import Features from "./component/Features/Features";
 import Portfolio from "./component/Portfolio/Portfolio";
-import Resume from "./component/Resume/Resume";
-import Skill from './component/Skill/Skill';
+// import Resume from "./component/Resume/Resume";
+// import Skill from './component/Skill/Skill';
 import Blog from "./component/Blog/Blog";
 // import Testimonial from "./component/Testimonial/Testimonial";
 import Contact from "./component/Contact/Contact";
 import Footer from "./component/Footer";
-import CustomCursor from "./component/CustomCursor"; 
-
+// import CustomCursor from "./component/CustomCursor"; 
+import Chatbot from "./component/Chatbot/Chatbot";
 import "./index.css";
 import "./App.css";
 
@@ -31,21 +31,22 @@ const App = () => {
 
   return (
     <div className="app-wrapper">
-      <CustomCursor />
+      {/* <CustomCursor /> */}
       <Header />
       
       <main className="main-content">
         <Home />
         <Features />
         <Portfolio />
-        <Resume />
-        <Skill />
+        {/* <Resume />
+        <Skill /> */}
         <Blog />
         {/* <Testimonial/> */}
         <Contact />
       </main>
 
       <Footer />
+      <Chatbot />
     </div>
   );
 };

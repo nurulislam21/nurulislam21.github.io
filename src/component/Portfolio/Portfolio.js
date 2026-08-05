@@ -5,9 +5,9 @@ import Portfolio_data from "./Portfolio_data";
 
 const Portfolio = () => {
   const [showAll, setShowAll] = useState(false);
-  const initialItems = 6; // Shows 2 rows of 3 initially
+  const initialItems = 6;
 
-  // Reverse the data so recent entries appear first
+  // Reverse data so recent entries appear first
   const reversedData = [...Portfolio_data].reverse();
 
   return (
@@ -15,8 +15,8 @@ const Portfolio = () => {
       <div className="container">
         
         <div className="heading" data-aos="fade-up">
-          <h4 className="section-subtitle">HARDWARE & SOFTWARE R&D //</h4>
-          <h1 className="section-title">Systems Portfolio</h1>
+          <span className="section-subtitle">MY WORK</span>
+          <h2 className="section-title">Featured Projects</h2>
         </div>
 
         <div className="content grid">
@@ -29,8 +29,8 @@ const Portfolio = () => {
                 totalLike={item.totalLike}
                 title={item.title}
                 description={item.description}
-                techStack={item.techStack} /* <-- CRITICAL ADDITION */
-                aosDelay={(index % 3) * 100} /* Staggers animations nicely per row */
+                techStack={item.techStack}
+                aosDelay={(index % 3) * 100}
               />
             )
           )}
@@ -41,8 +41,8 @@ const Portfolio = () => {
             className="load-more-btn"
             onClick={() => setShowAll(!showAll)}
           >
-            {showAll ? "SHRINK REPOSITORY" : "ACCESS FULL REPOSITORY"}
-            <i className={`fas ${showAll ? "fa-chevron-up" : "fa-chevron-down"} ml-10`} style={{ marginLeft: "10px" }}></i>
+            {showAll ? "Show Less Projects" : "View All Projects"}
+            <i className={`fas ${showAll ? "fa-chevron-up" : "fa-chevron-down"}`} style={{ marginLeft: "8px" }}></i>
           </button>
         </div>
         

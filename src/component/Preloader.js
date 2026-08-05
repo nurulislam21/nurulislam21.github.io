@@ -95,3 +95,48 @@
 // };
 
 // export default Preloader;
+import React, { useState, useEffect } from "react";
+import "./Preloader.css";
+
+const Preloader = ({ onComplete }) => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let currentProgress = 0;
+
+    const progressInterval = setInterval(() => {
+      currentProgress += Math.floor(Math.random() * 15) + 5; 
+      
+      if (currentProgress >= 100) {
+        currentProgress = 100;
+        clearInterval(progressInterval);
+        setTimeout(onComplete, 600); 
+      }
+      setProgress(currentProgress);
+    }, 120); 
+
+    return () => clearInterval(progressInterval);
+  }, [onComplete]);
+
+  return (
+    <div className="preloader">
+      <div className="loader-card">
+        <div className="loader-header">
+          <span className="loader-title">Nurul Islam Noman</span>
+          <span className="loader-subtitle">Embedded Systems & Hardware Portfolio</span>
+        </div>
+
+        <div className="progress-track">
+          <div className="progress-fill" style={{ width: `${progress}%` }}></div>
+        </div>
+
+        <div className="loader-footer">
+          <span className="loading-text">Loading Experience...</span>
+          <span className="percentage">{progress}%</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Preloader;

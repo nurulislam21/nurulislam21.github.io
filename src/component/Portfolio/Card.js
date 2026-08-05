@@ -28,14 +28,14 @@ const Card = ({ image, category, totalLike, title, description, techStack, aosDe
         <div className="img">
           <img src={image} alt={title} loading="lazy" />
           <div className="img-overlay">
-            <span>INSPECT_MODULE //</span>
+            <span>View Project</span>
           </div>
         </div>
         
         <div className="category">
           <span className="cat-badge">{category}</span>
           <label className="likes">
-            <i className="fas fa-microchip"></i> UID-{totalLike}
+            <i className="far fa-heart"></i> {totalLike}
           </label>
         </div>
         
@@ -43,7 +43,7 @@ const Card = ({ image, category, totalLike, title, description, techStack, aosDe
           <h2>{title}</h2>
         </div>
 
-        {/* PRO UPGRADE: Displaying the Tech Stack directly on the card */}
+        {/* Displaying Tech Stack directly on the card */}
         <div className="card-tech-stack">
           {techStack && techStack.map((tech, index) => (
             <span key={index} className="stack-tag">{tech}</span>
@@ -66,15 +66,15 @@ const Card = ({ image, category, totalLike, title, description, techStack, aosDe
               </div>
               
               <div className="modal-text">
-                <span className="cat-badge system-badge">SPEC_FILE // {category}</span>
+                <span className="cat-badge system-badge">{category}</span>
                 <h1>{title}</h1>
-                <p>{description || "Detailed telemetry data is currently being updated in the central repository."}</p>
+                <p>{description || "Project details are currently being compiled."}</p>
 
-                {/* PRO UPGRADE: Formatted Tech Stack in the Modal */}
+                {/* Formatted Tech Stack in Modal */}
                 {techStack && (
                   <div className="modal-tech-list">
                     {techStack.map((tech, index) => (
-                       <span key={index}>&gt; {tech}</span>
+                       <span key={index} className="modal-tech-tag">{tech}</span>
                     ))}
                   </div>
                 )}
@@ -86,11 +86,10 @@ const Card = ({ image, category, totalLike, title, description, techStack, aosDe
                     rel="noopener noreferrer"
                     className="pro-btn outline-btn"
                   >
-                    <i className="fas fa-code-branch"></i> REPOSITORY
+                    <i className="fab fa-github"></i> View Code
                   </a>
-                  {/* You can change this link to an actual schematic PDF later */}
                   <button className="pro-btn active-btn" onClick={toggleModal}>
-                    <i className="fas fa-check"></i> ACKNOWLEDGE
+                    Close Overview
                   </button>
                 </div>
               </div>

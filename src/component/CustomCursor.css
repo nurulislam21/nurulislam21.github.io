@@ -1,4 +1,3 @@
-/* --- Global Hide Default OS Cursor --- */
 * {
   cursor: none !important;
 }
@@ -8,91 +7,45 @@
   z-index: 999999;
 }
 
-/* --- The Core Sensor Dot --- */
 .custom-cursor-dot {
   position: fixed;
-  top: 0; left: 0; width: 4px; height: 4px;
-  background-color: var(--accent-primary);
-  box-shadow: 0 0 10px var(--accent-primary);
+  top: 0; left: 0; 
+  width: 6px; height: 6px;
+  background-color: var(--accent-primary, #00e5ff);
   border-radius: 50%;
   pointer-events: none;
   z-index: 999999;
-  margin: -2px 0 0 -2px; 
-  transition: width 0.2s, height 0.2s, background-color 0.2s, opacity 0.2s, border 0.2s;
+  margin: -3px 0 0 -3px; 
+  transition: transform 0.05s ease-out, opacity 0.2s, background-color 0.2s;
 }
 
-/* --- The Outer Radar Ring --- */
 .custom-cursor-ring {
   position: fixed;
-  top: 0; left: 0; width: 36px; height: 36px;
+  top: 0; left: 0; 
+  width: 30px; height: 30px;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  border-radius: 50%;
   pointer-events: none;
   z-index: 999998;
-  margin: -18px 0 0 -18px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: -15px 0 0 -15px; 
+  transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
 }
 
-/* --- The Spinning Radar Element --- */
-.radar-spinner {
-  width: 100%; height: 100%;
-  border-radius: 50%;
-  /* Upgraded to dual-tone tech spinning ring */
-  border-top: 1px dashed var(--accent-primary);
-  border-bottom: 1px dashed var(--accent-secondary);
-  border-left: 1px solid transparent;
-  border-right: 1px solid transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: slow-spin 8s linear infinite; 
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.crosshair-x, .crosshair-y {
-  position: absolute;
-  background: rgba(0, 229, 255, 0.5);
-}
-.crosshair-x { width: 12px; height: 1px; }
-.crosshair-y { width: 1px; height: 12px; }
-
-/* --- 1. HOVER PHYSICS --- */
+/* Hover States */
 .custom-cursor-dot.hovering {
-  width: 8px; height: 8px;
-  margin: -4px 0 0 -4px;
-  background-color: transparent;
-  border: 2px solid var(--accent-primary);
+  opacity: 0;
 }
 
-.custom-cursor-ring.hovering .radar-spinner {
-  width: 55px; height: 55px;
-  border: 1px solid var(--accent-primary); 
-  background-color: rgba(0, 229, 255, 0.05);
-  backdrop-filter: blur(2px);
-  animation: fast-spin 2s linear infinite; 
+.custom-cursor-ring.hovering {
+  width: 48px; height: 48px;
+  margin: -24px 0 0 -24px;
+  border-color: var(--accent-primary, #00e5ff);
+  background-color: rgba(0, 229, 255, 0.06);
 }
 
-/* --- 2. CLICK PHYSICS --- */
-.custom-cursor-dot.clicking {
-  width: 2px; height: 2px;
-  margin: -1px 0 0 -1px;
-}
-
-.custom-cursor-ring.clicking .radar-spinner {
-  width: 20px; height: 20px;
-  border: 2px solid var(--accent-primary);
-  background-color: rgba(0, 229, 255, 0.2);
-  box-shadow: 0 0 20px var(--accent-glow);
-}
-
-@keyframes slow-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes fast-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(-360deg); } 
+/* Click States */
+.custom-cursor-ring.clicking {
+  transform: scale(0.85);
 }
 
 @media (max-width: 992px) {
