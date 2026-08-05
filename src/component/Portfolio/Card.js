@@ -4,16 +4,10 @@ import ReactDOM from "react-dom";
 const Card = ({ image, category, totalLike, title, description, techStack, aosDelay }) => {
   const [modal, setModal] = useState(false);
 
-  const toggleModal = () => {
-    setModal(!modal);
-  };
+  const toggleModal = () => setModal(!modal);
 
   useEffect(() => {
-    if (modal) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = modal ? "hidden" : "auto";
     return () => { document.body.style.overflow = "auto"; };
   }, [modal]);
 
@@ -28,7 +22,7 @@ const Card = ({ image, category, totalLike, title, description, techStack, aosDe
         <div className="img">
           <img src={image} alt={title} loading="lazy" />
           <div className="img-overlay">
-            <span>View Project</span>
+            <span>View Technical Details</span>
           </div>
         </div>
         
@@ -43,7 +37,6 @@ const Card = ({ image, category, totalLike, title, description, techStack, aosDe
           <h2>{title}</h2>
         </div>
 
-        {/* Displaying Tech Stack directly on the card */}
         <div className="card-tech-stack">
           {techStack && techStack.map((tech, index) => (
             <span key={index} className="stack-tag">{tech}</span>
@@ -68,13 +61,12 @@ const Card = ({ image, category, totalLike, title, description, techStack, aosDe
               <div className="modal-text">
                 <span className="cat-badge system-badge">{category}</span>
                 <h1>{title}</h1>
-                <p>{description || "Project details are currently being compiled."}</p>
+                <p>{description || "Technical documentation currently being indexed."}</p>
 
-                {/* Formatted Tech Stack in Modal */}
                 {techStack && (
                   <div className="modal-tech-list">
                     {techStack.map((tech, index) => (
-                       <span key={index} className="modal-tech-tag">{tech}</span>
+                      <span key={index} className="modal-tech-tag">{tech}</span>
                     ))}
                   </div>
                 )}
@@ -86,7 +78,7 @@ const Card = ({ image, category, totalLike, title, description, techStack, aosDe
                     rel="noopener noreferrer"
                     className="pro-btn outline-btn"
                   >
-                    <i className="fab fa-github"></i> View Code
+                    <i className="fab fa-github"></i> Source Repository
                   </a>
                   <button className="pro-btn active-btn" onClick={toggleModal}>
                     Close Overview

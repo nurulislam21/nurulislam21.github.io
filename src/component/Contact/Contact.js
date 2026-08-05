@@ -39,7 +39,7 @@ const Contact = () => {
         () => {
           setStatus({
             type: 'success',
-            msg: "Thanks for reaching out! Your message has been sent successfully."
+            msg: "Your message has been sent successfully."
           });
           setData({ fullname: '', phone: '', email: '', subject: '', message: '' });
           setIsSubmitting(false);
@@ -47,9 +47,9 @@ const Contact = () => {
         (error) => {
           setStatus({
             type: 'error',
-            msg: "Something went wrong. Please try again or reach out via email directly."
+            msg: "Something went wrong. Please try again or email directly."
           });
-          console.error('Error sending message: ', error);
+          console.error('Email error: ', error);
           setIsSubmitting(false);
         }
       );
@@ -66,7 +66,7 @@ const Contact = () => {
 
         <div className="content d_flex mtop contact-grid">
           
-          {/* Left Section: Info Panel */}
+          {/* Left Info Panel */}
           <div className="left tech-panel" data-aos="fade-right">
             <div className="img">
               <img src={contact1} alt="Nurul Islam Noman" />
@@ -74,7 +74,7 @@ const Contact = () => {
             <div className="details">
               <h1>Nurul Islam Noman</h1>
               <p className="title-tag">Embedded Systems & Hardware Engineer</p>
-              <p className="desc">I'm always open to discussing custom PCB design, embedded firmware projects, robotics, or engineering opportunities. Drop a message and let's start a conversation!</p>
+              <p className="desc">Open to custom PCB design, embedded firmware projects, robotics, or engineering positions. Send a message to start a conversation!</p>
               
               <div className="contact-info">
                 <p><i className="fas fa-phone-alt"></i> +880 1823-395901</p>
@@ -94,15 +94,12 @@ const Contact = () => {
                   <a href="https://www.facebook.com/nurulislamnoman.21/" target="_blank" rel="noopener noreferrer" className="icon-btn" aria-label="Facebook">
                     <i className="fab fa-facebook-f"></i>
                   </a>
-                  <a href="https://www.instagram.com/nurul_islam.noman/" target="_blank" rel="noopener noreferrer" className="icon-btn" aria-label="Instagram">
-                    <i className="fab fa-instagram"></i>
-                  </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Section: Form Panel */}
+          {/* Right Form Panel */}
           <div className="right tech-panel" data-aos="fade-left">
             <form onSubmit={formSubmit} className="contact-form">
               
@@ -128,7 +125,7 @@ const Contact = () => {
                     onChange={InputEvent} 
                     required 
                     className="tech-input" 
-                    placeholder="e.g. +1 (310) 363-6000" 
+                    placeholder="e.g. +1 (800) 613-8840" 
                   />
                 </div>
               </div>
@@ -142,7 +139,7 @@ const Contact = () => {
                   onChange={InputEvent} 
                   required 
                   className="tech-input" 
-                  placeholder="e.g. elon@spacex.com" 
+                  placeholder="e.g. elon@x.com" 
                 />
               </div>
 
@@ -155,7 +152,7 @@ const Contact = () => {
                   onChange={InputEvent} 
                   required 
                   className="tech-input" 
-                  placeholder="e.g. Starship Telemetry & Autonomous VTOL Engineering" 
+                  placeholder="e.g. Custom Starship Avionics & Hardware Collaboration" 
                 />
               </div>
 
@@ -168,7 +165,7 @@ const Contact = () => {
                   rows="5" 
                   required 
                   className="tech-input" 
-                  placeholder="Hi Noman, saw your SN-21 VTOL project and embedded PCB work. We'd love to chat about hardware design opportunities at SpaceX..."
+                  placeholder="Hi Noman, I reviewed your multi-layer PCB design work and autonomous engineering projects..."
                 ></textarea>
               </div>
 

@@ -165,25 +165,25 @@ const BlogApi = [
   },
   {
     id: 20,
+    image: duet_lfr,
+    ppimage: duet_lfr,
+    date: "2025 Season",
+    title_one: "DUET Techfest 2025 - 1st Runner Up LFR",
+  },
+  {
+    id: 21,
     image: awd14,
     ppimage: awd14,
     date: "20 January, 2025",
     title_one: "United International University - Champion | Team RoboMore",
   },
   {
-    id: 21,
+    id: 22,
     image: wro_team,
     ppimage: wro_teaminit,
     date: "November 2025",
     title_one: "WRO International Final (Singapore) - 29th Place | Team Echo Drift",
   },
-  {
-    id: 22,
-    image: duet_lfr,
-    ppimage: duet_lfr,
-    date: "2025 Season",
-    title_one: "DUET Techfest 2025 - 1st Runner Up LFR",
-  }
 ];
 
 export default BlogApi;

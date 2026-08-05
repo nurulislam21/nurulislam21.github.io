@@ -1,64 +1,29 @@
-/* --- PREMIUM SYSTEM VARIABLES --- */
+/* --- PRECISION SYSTEM VARIABLES --- */
 :root {
-  --bg-dark: #05080f;         
-  --bg-card: rgba(13, 18, 28, 0.6); /* Darker, richer frosted glass */
+  --bg-dark: #090d16;         
+  --bg-card: rgba(15, 23, 42, 0.65); 
   --text-main: #f8fafc;       
-  --text-muted: #8b9bb4;      
-  --accent-primary: #00e5ff;  /* Cyber Cyan */
-  --accent-secondary: #0055ff; /* Deep Tech Blue */
-  --accent-glow: rgba(0, 229, 255, 0.4); 
-  --border-color: rgba(255, 255, 255, 0.06);    
-  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Snappier, hardware-like easing */
+  --text-muted: #94a3b8;      
+  --accent-primary: #00e5ff;  
+  --accent-secondary: #3b82f6; 
+  --accent-glow: rgba(0, 229, 255, 0.2); 
+  --border-color: rgba(255, 255, 255, 0.08);    
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
-/* --- BASE & TYPOGRAPHY --- */
-body {
-  background-color: var(--bg-dark);
-  color: var(--text-muted);
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* --- HUD TERMINAL SCROLLBAR --- */
-::-webkit-scrollbar {
-  width: 5px; 
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-dark); 
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 229, 255, 0.15); 
-  border-radius: 8px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-primary); 
-}
-
-/* --- LAYOUT UTILITIES --- */
+/* --- BASE UTILITIES --- */
 .app-wrapper {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
 }
 
-/* Subtle Engineering Blueprint Grid Background */
-.app-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 40px 40px;
-  z-index: 0;
-  pointer-events: none;
-}
-
 .container {
   max-width: 1200px; 
   margin: auto;
-  padding: 0 30px;
+  padding: 0 24px;
   position: relative;
   z-index: 5;
 }
@@ -67,127 +32,75 @@ body {
 .f_flex { display: flex; }
 
 a { text-decoration: none; color: var(--accent-primary); transition: var(--transition); }
-a:hover { color: #fff; text-shadow: 0 0 10px var(--accent-glow); }
+a:hover { color: #ffffff; }
 li { list-style: none; }
 
-/* --- PREMIUM GLASSMORPHISM --- */
-/* Machined glass aesthetic for portfolio cards */
+/* --- GLASS PANELS --- */
 .box_shodow {
   background: var(--bg-card);
   backdrop-filter: blur(16px); 
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
-  border-top: 1px solid rgba(255, 255, 255, 0.12); /* Top edge highlight */
   border-radius: 12px; 
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-  /* Hardware acceleration for smooth hover */
-  transform: translateZ(0); 
-}
-
-.box_shodow::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%; width: 50%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
-  transition: all 0.6s ease;
-  transform: skewX(-20deg);
 }
 
 .box_shodow:hover {
-  border-color: rgba(0, 229, 255, 0.3);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 0 20px rgba(0, 229, 255, 0.02);
-  transform: translateY(-5px) translateZ(0); 
+  border-color: rgba(0, 229, 255, 0.25);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-.box_shodow:hover::before {
-  left: 200%; /* Subtle scanner sweep effect on hover */
-}
-
-/* --- TACTILE BUTTON STYLING --- */
+/* --- BUTTONS --- */
 .btn_shadow {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 1.5px;
-  color: var(--accent-primary);
-  background: rgba(0, 229, 255, 0.03);
-  border: 1px solid rgba(0, 229, 255, 0.4);
-  border-radius: 4px; /* Sharper edges for a tech feel */
-  padding: 14px 30px;
+  color: #ffffff;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px; 
+  padding: 12px 26px;
   transition: var(--transition);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  text-transform: uppercase;
-}
-
-.btn_shadow::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; width: 100%; height: 0%;
-  background: var(--accent-primary);
-  transition: var(--transition);
-  z-index: -1;
+  gap: 8px;
 }
 
 .btn_shadow:hover {
-  color: var(--bg-dark); 
   border-color: var(--accent-primary);
-  box-shadow: 0 0 20px var(--accent-glow);
-}
-
-.btn_shadow:hover::after {
-  height: 100%; /* Fills from bottom up */
+  background: rgba(30, 41, 59, 0.9);
 }
 
 /* --- TYPOGRAPHY & SPACING --- */
 .top { margin-top: 100px; }
-.mtop { margin-top: 50px; }
+.mtop { margin-top: 40px; }
 .text-center { text-align: center; }
-.primary_color { color: var(--accent-primary); }
 
-.heading { margin-bottom: 60px; }
-.heading h4 {
+.heading { margin-bottom: 48px; }
+.heading .section-subtitle {
   color: var(--accent-primary);
-  font-family: "JetBrains Mono", monospace;
-  letter-spacing: 4px;
+  font-family: var(--font-mono);
+  letter-spacing: 2px;
   font-size: 12px;
   text-transform: uppercase;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-/* Adds a structural line next to the subheadings */
-.heading h4::before {
-  content: "";
-  display: inline-block;
-  width: 30px;
-  height: 1px;
-  background-color: var(--accent-primary);
+  margin-bottom: 8px;
+  display: block;
 }
 
-.heading h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 52px;
+.heading .section-title {
+  font-family: var(--font-sans);
+  font-size: clamp(28px, 3.5vw, 38px);
   color: var(--text-main);
   font-weight: 800;
-  letter-spacing: -1px;
-  line-height: 1.1;
+  letter-spacing: -0.5px;
 }
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
   .top { margin-top: 70px; }
-  .heading h1 { font-size: 36px; }
+  .heading .section-title { font-size: 28px; }
   .box_shodow { padding: 20px; }
-  .app-wrapper::before { background-size: 20px 20px; } /* Tighter grid on mobile */
 }

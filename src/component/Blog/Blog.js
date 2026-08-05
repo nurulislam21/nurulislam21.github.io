@@ -7,7 +7,7 @@ const Blog = () => {
   const [showAll, setShowAll] = useState(false);
   const initialItems = 6;
 
-  // Reverse the API data to show new achievements first
+  // Reverse API data so recent achievements display first
   const reversedBlog = [...BlogApi].reverse();
 
   return (
@@ -15,8 +15,8 @@ const Blog = () => {
       <div className="container">
         
         <div className="heading" data-aos="fade-up">
-          <h4 className="section-subtitle">MILESTONES & RECOGNITION //</h4>
-          <h1 className="section-title">Verified Achievements</h1>
+          <span className="section-subtitle">AWARDS & RECOGNITION</span>
+          <h2 className="section-title">Verified Competition Milestones</h2>
         </div>
 
         <div className="content grid">
@@ -28,7 +28,7 @@ const Blog = () => {
                 ppimage={value.ppimage} 
                 date={value.date} 
                 title_one={value.title_one} 
-                aosDelay={(index % 3) * 100} 
+                aosDelay={(index % 3) * 80} 
               />
             );
           })}
@@ -40,8 +40,8 @@ const Blog = () => {
               className="load-more-btn"
               onClick={() => setShowAll(!showAll)}
             >
-              {showAll ? "COLLAPSE RECORDS" : "ACCESS FULL ARCHIVE"}
-              <i className={`fas ${showAll ? "fa-chevron-up" : "fa-chevron-down"}`} style={{ marginLeft: "10px" }}></i>
+              {showAll ? "Show Fewer Milestones" : "View Complete Archive"}
+              <i className={`fas ${showAll ? "fa-chevron-up" : "fa-chevron-down"}`} style={{ marginLeft: "8px" }}></i>
             </button>
           </div>
         )}
